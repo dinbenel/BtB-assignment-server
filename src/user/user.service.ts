@@ -18,21 +18,12 @@ export class UserService {
     return this.dbService.user.findMany();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+  findOne(id: string) {
+    return this.dbService.user.findUnique({ where: { id } });
   }
 
-  async findOneByEmail({ email }: FindUserByMailDto) {
-    try {
-      const user = await this.dbService.user.findUnique({ where: { email } });
-      if (!user) {
-        throw new UnauthorizedException('unauthorize');
-      }
-
-      return user;
-    } catch (error) {
-      this.logger.error(error);
-    }
+  findOneByEmail({ email }: FindUserByMailDto) {
+    return this.dbService.user.findUnique({ where: { email } });
   }
 
   update(id: number) {

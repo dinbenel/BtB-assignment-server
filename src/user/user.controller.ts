@@ -16,16 +16,6 @@ export class UserController {
     return this.userService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.userService.findOne(+id);
-  }
-
-  @Post()
-  login(@Body() findByMailDto: FindUserByMailDto) {
-    return this.userService.findOneByEmail(findByMailDto);
-  }
-
   @Patch(':id')
   update(@Param('id') id: string) {
     return this.userService.update(+id);
