@@ -13,7 +13,7 @@ async function bootstrap() {
   app.enableCors(corsOptions);
 
   const { httpAdapter } = app.get(HttpAdapterHost);
-  app.useGlobalFilters(new AllExceptionsFilter(httpAdapter));
+  // app.useGlobalFilters(new AllExceptionsFilter(httpAdapter));
   app.setGlobalPrefix('api');
   app.useGlobalPipes(
     new ValidationPipe({

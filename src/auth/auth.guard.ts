@@ -15,8 +15,9 @@ export class AuthGuard implements CanActivate {
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const req = context.switchToHttp().getRequest<IReq>();
-    const token = req.headers.authorization?.replace('Bearer ', '').trim();
+    const [_, token] = req.headers.authorization?.split(' ');
 
+    if (!token) return false;
     const userFromToken = this.jwt.verify<IUserWithoutPassword>(token);
 
     if (!userFromToken) return false;

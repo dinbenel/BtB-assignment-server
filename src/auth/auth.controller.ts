@@ -1,7 +1,8 @@
-import { Body, Controller, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/auth.dto';
 import { AuthGuard } from './auth.guard';
+import { IReq } from 'src/types/http.type';
 
 @Controller('auth')
 export class AuthController {
@@ -13,6 +14,8 @@ export class AuthController {
   }
 
   @UseGuards(AuthGuard)
-  @Post('logged-user')
-  loggedInUser() {}
+  @Get('logged-user')
+  loggedInUser(@Req() req: IReq) {
+    return req.user;
+  }
 }
