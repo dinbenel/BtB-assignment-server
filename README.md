@@ -22,9 +22,20 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+# Rick and Morty Info App Backend
+
+- This is the backend service for the Rick and Morty Info App.
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+
+## Features
+
+- RESTful API for Rick and Morty authentication.
+- Basic JWT authentication for secure access.
+- Prisma ORM with SQLite for database management.
+- Modular and scalable architecture using NestJS.
 
 ## Installation
 
@@ -45,6 +56,11 @@ $ pnpm run start:dev
 $ pnpm run start:prod
 ```
 
+### Users in the database
+
+- bin@bino.com - 7654321
+- gin@gino.com - 1234567
+
 ## Test
 
 ```bash
@@ -57,16 +73,6 @@ $ pnpm run test:e2e
 # test coverage
 $ pnpm run test:cov
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
